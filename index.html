@@ -2,9 +2,10 @@
 layout: default
 ---
 
-{% comment %} 焦点文章：取最近 3 篇 front matter 带 featured: true 的文章轮播；一篇都没有则取最新文章 {% endcomment %}
-{% assign featuredList = site.posts | where: "featured", true %}
-{% if featuredList.size == 0 %}{% assign featuredList = site.posts %}{% endif %}
+{% comment %} 焦点文章：取最近 3 篇 front matter 带 featured: true 的文章轮播；一篇都没有则取最新文章。hidden: true 的页面（如关于我）一律不参与 {% endcomment %}
+{% assign visiblePosts = site.posts | where_exp: "post", "post.hidden != true" %}
+{% assign featuredList = visiblePosts | where: "featured", true %}
+{% if featuredList.size == 0 %}{% assign featuredList = visiblePosts %}{% endif %}
 {% assign topFeatured = featuredList.first %}
 
 {% if topFeatured %}
@@ -34,7 +35,7 @@ layout: default
         <h3>最新文章</h3>
       </div>
       <ul class="block-list">
-        {% for post in site.posts limit:6 %}
+        {% for post in visiblePosts limit:6 %}
         <li><a href="{{ post.url }}">{{ post.title }}</a></li>
         {% endfor %}
       </ul>

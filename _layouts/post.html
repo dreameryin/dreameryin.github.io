@@ -27,9 +27,23 @@ layout: default
     <span class="post-meta-right">
       <span class="font-switch">字号：<button type="button" data-size="default">默认</button><button type="button" data-size="large">大</button><button type="button" data-size="xlarge">超大</button></span>
        ｜ 
-      {%- if page.previous %}<a href="{{ page.previous.url }}">上一篇</a>{% else %}<span class="disabled">上一篇</span>{% endif %}
+      {%- comment %} 上一篇=更早发布的文章、下一篇=更晚发布的文章；隐藏页（关于我）不参与导航 {% endcomment -%}
+      {%- assign visiblePosts = site.posts | where_exp: "item", "item.hidden != true" -%}
+      {%- assign currentIndex = -1 -%}
+      {%- for item in visiblePosts -%}
+        {%- if item.url == page.url -%}{%- assign currentIndex = forloop.index0 -%}{%- endif -%}
+      {%- endfor -%}
+      {%- if currentIndex >= 0 -%}
+        {%- assign olderIndex = currentIndex | plus: 1 -%}
+        {%- assign olderPost = visiblePosts[olderIndex] -%}
+        {%- if currentIndex > 0 -%}
+          {%- assign newerIndex = currentIndex | minus: 1 -%}
+          {%- assign newerPost = visiblePosts[newerIndex] -%}
+        {%- endif -%}
+      {%- endif -%}
+      {%- if olderPost %}<a href="{{ olderPost.url }}">上一篇</a>{% else %}<span class="disabled">上一篇</span>{% endif %}
        ｜ 
-      {%- if page.next %}<a href="{{ page.next.url }}">下一篇</a>{% else %}<span class="disabled">下一篇</span>{% endif %}
+      {%- if newerPost %}<a href="{{ newerPost.url }}">下一篇</a>{% else %}<span class="disabled">下一篇</span>{% endif %}
     </span>
   </div>
   {% endif %}

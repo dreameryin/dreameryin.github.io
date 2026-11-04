@@ -2,7 +2,8 @@
 layout: null
 ---
 [
-{%- for post in site.posts %}
+{%- assign visiblePosts = site.posts | where_exp: "post", "post.hidden != true" -%}
+{%- for post in visiblePosts %}
   {
     "title": {{ post.title | jsonify }},
     "url": {{ post.url | relative_url | jsonify }},
