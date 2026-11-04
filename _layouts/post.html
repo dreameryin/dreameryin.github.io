@@ -7,7 +7,8 @@ layout: default
   <!-- 文章标题：居中黑色大字 -->
   <h1 class="post-title">{{ page.title }}</h1>
 
-  <!-- 元信息行：左侧日期+分类，右侧上一篇/下一篇 -->
+  <!-- 元信息行：左侧日期+分类，右侧上一篇/下一篇（仅真正的文章显示，关于我等无日期页面不显示） -->
+  {% if page.date %}
   <div class="post-meta">
     <span class="post-meta-left">
       {{ page.date | date: "%Y-%m-%d %H:%M" }}
@@ -29,6 +30,7 @@ layout: default
       {%- if page.next %}<a href="{{ page.next.url }}">下一篇</a>{% else %}<span class="disabled">下一篇</span>{% endif %}
     </span>
   </div>
+  {% endif %}
 
   <!-- 正文 -->
   <div class="post-content">

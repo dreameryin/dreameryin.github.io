@@ -478,12 +478,12 @@ ul {
   color: #cccccc;
 }
 
-/* 正文：对标 gov.cn 文章页（宋体 24pt 大字、黑色、宽松行距、段首缩进） */
+/* 正文：对标 gov.cn 文章页实测默认值（trs_tynry.css：宋体 16px、行高 30px、段首缩进） */
 .post-content {
   font-family: "SimSun", "宋体", "Noto Serif SC", serif;
-  font-size: 24pt;
-  line-height: 1.7;
-  color: #222222;
+  font-size: 16px;
+  line-height: 1.875;
+  color: #333333;
   padding-top: 22px;
 }
 
@@ -503,13 +503,13 @@ ul {
 }
 
 .post-content h2 {
-  font-size: 36px;
+  font-size: 22px;
   border-left: 4px solid #015293;
   padding-left: 10px;
 }
 
 .post-content h3 {
-  font-size: 30px;
+  font-size: 19px;
 }
 
 .post-content a {
@@ -763,11 +763,11 @@ ul {
   }
 
   .post-content h2 {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .post-content h3 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .post-meta {
