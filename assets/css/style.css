@@ -201,7 +201,8 @@ ul {
    第一行行高由焦点图决定，右侧列表随网格拉伸，天然与图片顶/底对齐 */
 .featured-body {
   display: grid;
-  grid-template-columns: 58fr 42fr;
+  /* gov.cn 实测：.news .focus 660px + .news .list 510px（1220 容器）→ 54:46 */
+  grid-template-columns: 54fr 46fr;
   column-gap: 40px;
   margin-top: 32px;
 }
