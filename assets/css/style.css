@@ -404,7 +404,10 @@ ul {
   font-size: 18px;
   font-weight: bold;
   padding: 9px 26px;
-  border-radius: 3px;
+  border-radius: 3px 0 0 0;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
 }
 
 .section-sort {
@@ -445,6 +448,7 @@ ul {
 }
 
 .empty-tip {
+  font-size: 16px;
   color: #aaaaaa;
   padding: 24px 4px;
 }
@@ -677,7 +681,7 @@ ul {
 }
 
 .search-count {
-  font-size: 14px;
+  font-size: 16px;
   color: #999999;
   margin: 14px 0 6px;
 }
@@ -694,14 +698,14 @@ ul {
 }
 
 .result-excerpt {
-  font-size: 14px;
+  font-size: 16px;
   color: #666666;
   line-height: 1.8;
   margin-top: 6px;
 }
 
 .result-date {
-  font-size: 12px;
+  font-size: 16px;
   color: #aaaaaa;
   margin-top: 6px;
 }

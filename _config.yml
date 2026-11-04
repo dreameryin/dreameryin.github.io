@@ -23,10 +23,11 @@ highlighter: rouge
 
 # ============================================================
 # 栏目配置（页头导航 + 首页栏目块都由这里驱动）
-# 新增分类只需三步：
+# 新增分类只需四步：
 #   1. 在下面加一项（slug 用英文，name 用中文显示名）
 #   2. 在 categories/ 目录复制一个现有分类页，改里面两个字段
-#   3. 在 _posts/ 下建一个与 name 同名的子文件夹（该分类的文章放这里，文件夹名自动成为文章分类）
+#   3. 在 _posts/ 下建一个与 name 同名的子文件夹（该分类的文章放这里）
+#   4. 在下方 defaults 里加一条该文件夹的 categories 注入规则
 # ============================================================
 sections:
   - slug: ai
@@ -39,7 +40,10 @@ sections:
     name: 软件架构
 
 # ============================================================
-# 文章默认值：_posts/ 下的文章自动使用 post 布局
+# 文章默认值
+#   1) _posts/ 下的文章自动使用 post 布局
+#   2) 按所在子文件夹自动注入分类（Jekyll 并不会自动把子文件夹名当分类，
+#      必须在这里显式声明；新增分类时需同步加一条对应规则）
 # ============================================================
 defaults:
   - scope:
@@ -47,6 +51,26 @@ defaults:
       type: posts
     values:
       layout: post
+  - scope:
+      path: "_posts/人工智能"
+    values:
+      categories: ["人工智能"]
+  - scope:
+      path: "_posts/虚幻引擎"
+    values:
+      categories: ["虚幻引擎"]
+  - scope:
+      path: "_posts/Unity引擎"
+    values:
+      categories: ["Unity引擎"]
+  - scope:
+      path: "_posts/软件架构"
+    values:
+      categories: ["软件架构"]
+  - scope:
+      path: "_posts/关于我"
+    values:
+      categories: ["关于我"]
 
 # 不参与构建的文件
 exclude:

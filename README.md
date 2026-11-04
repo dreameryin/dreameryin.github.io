@@ -22,7 +22,7 @@
    - **日期前缀必须有**（Jekyll 识别文章的硬性规则）
    - 横线后面随意命名，**直接用中文标题就行**，它会成为文章网址的一部分（如 `/202611/我的文章标题.html`）
 
-3. 头部只需填 `title` 一行，其他可选字段模板里有注释说明；**分类不用写**，由所在文件夹自动决定。
+3. 头部只需填 `title` 一行，其他可选字段模板里有注释说明；**分类不用写**，由 _config.yml 按所在文件夹自动注入。
 
 4. 用 Markdown 写正文，写完删掉模板里的使用说明注释块。
 
@@ -41,7 +41,7 @@
 | 字段 | 必填 | 说明 |
 |------|------|------|
 | `title` | 是 | 文章标题 |
-| ~~`categories`~~ | 否 | **不用写**，由所在子文件夹名自动决定 |
+| ~~`categories`~~ | 否 | **不用写**，由 _config.yml 的 defaults 按所在子文件夹自动注入 |
 | ~~`date`~~ | 否 | **不用写**，发布日期取文件名里的日期 |
 | `featured` | 否 | 写 `featured: true` 即进入首页焦点区轮播（最近 3 篇带此标记的文章参与轮播，自动切换） |
 | `image` | 否 | 焦点区配图路径。不写则自动用 `assets/images/featured/default.svg`；文件夹里预置了 ai/ue/unity/architecture 等主题图，可指定，如 `image: /assets/images/featured/ue.svg` |
@@ -59,7 +59,7 @@
 
 ## 四、新增分类（如"技术美术"）
 
-三步，共改不到 6 行：
+四步：
 
 1. `_config.yml` 的 `sections:` 下加一项：
 
@@ -68,14 +68,23 @@
      name: 技术美术
    ```
 
-2. 在 `categories/` 目录复制 `ai.html` 为 `ta.html`，改里面两行：
+2. `_config.yml` 的 `defaults:` 下加一条分类注入规则（与该分类的文件夹同名）：
+
+   ```yaml
+   - scope:
+       path: "_posts/技术美术"
+     values:
+       categories: ["技术美术"]
+   ```
+
+3. 在 `categories/` 目录复制 `ai.html` 为 `ta.html`，改里面两行：
 
    ```yaml
    title: 技术美术
    section_name: 技术美术
    ```
 
-3. 在 `_posts/` 下新建子文件夹 `技术美术/`（该分类的文章以后放这里）。
+4. 在 `_posts/` 下新建子文件夹 `技术美术/`（该分类的文章以后放这里）。
 
 push 后导航、首页栏目块、分类页自动出现。
 
