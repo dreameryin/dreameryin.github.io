@@ -28,7 +28,6 @@ layout: default
           {% endfor %}
         </div>
       </div>
-      <p class="fcarousel-caption"><a id="fcarousel-caption-link" href="{{ topFeatured.url }}">{{ topFeatured.title }}</a></p>
     </div>
     <div class="latest-block">
       <div class="block-head">
@@ -40,6 +39,7 @@ layout: default
         {% endfor %}
       </ul>
     </div>
+    <p class="fcarousel-caption"><a id="fcarousel-caption-link" href="{{ topFeatured.url }}">{{ topFeatured.title }}</a></p>
   </div>
 </section>
 <script src="/assets/js/carousel.js?v={{ site.time | date: '%Y%m%d%H%M%S' }}"></script>
