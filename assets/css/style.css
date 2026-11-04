@@ -181,7 +181,7 @@ ul {
   text-align: center;
   font-size: 38px;
   font-weight: normal;
-  line-height: 1.5;
+  line-height: 1.3;
 }
 
 .featured-title a {
@@ -194,7 +194,7 @@ ul {
   font-size: 19px;
   color: #015293;
   line-height: 1.7;
-  margin-top: 12px;
+  margin-top: 6px;
 }
 
 /* 焦点区主体：grid 两列（54:46，对标 gov.cn 660+510）。图下标题独占第二行，
