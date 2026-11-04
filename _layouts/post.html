@@ -25,6 +25,8 @@ layout: default
       {%- endif %}
     </span>
     <span class="post-meta-right">
+      <span class="font-switch">字号：<button type="button" data-size="default">默认</button><button type="button" data-size="large">大</button><button type="button" data-size="xlarge">超大</button></span>
+       ｜ 
       {%- if page.previous %}<a href="{{ page.previous.url }}">上一篇</a>{% else %}<span class="disabled">上一篇</span>{% endif %}
        ｜ 
       {%- if page.next %}<a href="{{ page.next.url }}">下一篇</a>{% else %}<span class="disabled">下一篇</span>{% endif %}
@@ -38,3 +40,5 @@ layout: default
   </div>
 
 </article>
+
+<script src="/assets/js/fontsize.js?v={{ site.time | date: '%Y%m%d%H%M%S' }}"></script>

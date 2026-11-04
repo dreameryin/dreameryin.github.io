@@ -486,6 +486,39 @@ ul {
   color: #cccccc;
 }
 
+/* 字号切换器：文字式按钮，融入元信息行 */
+.font-switch {
+  margin-right: 4px;
+}
+
+.font-switch button {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0 3px;
+  font: inherit;
+  color: #999999;
+  cursor: pointer;
+}
+
+.font-switch button:hover {
+  color: #015293;
+}
+
+.font-switch button.active {
+  color: #015293;
+  font-weight: bold;
+}
+
+/* 字号档位：默认 16px（基准），大 18px，超大 20px；行高按比例自动跟随 */
+.post-content.font-large {
+  font-size: 18px;
+}
+
+.post-content.font-xlarge {
+  font-size: 20px;
+}
+
 /* 正文：对标 gov.cn 文章页实测默认值（trs_tynry.css：宋体 16px、行高 30px、段首缩进） */
 .post-content {
   font-family: "SimSun", "宋体", "Noto Serif SC", serif;
