@@ -52,17 +52,15 @@ ul {
 }
 
 .header-inner {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
-  padding-top: 26px;
-  padding-bottom: 22px;
+  min-height: 110px;
 }
 
 .site-brand {
   display: flex;
   flex-direction: column;
-  justify-self: start;
+  flex-shrink: 0;
 }
 
 .site-brand:hover {
@@ -85,7 +83,7 @@ ul {
   margin-top: 2px;
 }
 
-/* 搜索框：页面水平居中，高38px 圆角20px 背景#f0f0f0 */
+/* 搜索框：与导航组成右对齐组（gov.cn 同款位置），高38px 圆角20px 背景#f0f0f0 */
 .header-search {
   display: flex;
   align-items: center;
@@ -94,7 +92,8 @@ ul {
   padding: 0 16px;
   width: 260px;
   height: 38px;
-  justify-self: center;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .header-search input {
@@ -122,10 +121,11 @@ ul {
 }
 
 .site-nav {
-  justify-self: end;
+  margin-left: 36px;
   font-size: 16px;
   color: #666666;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .site-nav a {
@@ -177,8 +177,8 @@ ul {
 
 .featured-body {
   display: grid;
-  grid-template-columns: 7fr 5fr;
-  gap: 50px;
+  grid-template-columns: 56fr 44fr;
+  gap: 40px;
   margin-top: 32px;
   align-items: start;
 }
@@ -186,6 +186,7 @@ ul {
 .featured-image img {
   width: 100%;
   aspect-ratio: 660 / 370;
+  max-height: 370px;
   object-fit: cover;
   display: block;
 }
@@ -195,6 +196,8 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  border-bottom: 2px solid #015293;
+  padding-bottom: 6px;
   margin-bottom: 14px;
 }
 
