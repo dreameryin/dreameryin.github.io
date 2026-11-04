@@ -201,7 +201,7 @@ ul {
    第一行行高由焦点图决定，右侧列表随网格拉伸，天然与图片顶/底对齐 */
 .featured-body {
   display: grid;
-  grid-template-columns: 54fr 46fr;
+  grid-template-columns: 58fr 42fr;
   column-gap: 40px;
   margin-top: 32px;
 }
