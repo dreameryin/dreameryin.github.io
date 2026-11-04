@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<article class="post container-narrow">
+
+  <!-- 文章标题：居中黑色大字 -->
+  <h1 class="post-title">{{ page.title }}</h1>
+
+  <!-- 元信息行：左侧日期+分类，右侧上一篇/下一篇 -->
+  <div class="post-meta">
+    <span class="post-meta-left">
+      {{ page.date | date: "%Y-%m-%d %H:%M" }}
+      {%- if page.categories and page.categories.size > 0 %}
+      　分类：{% for categoryName in page.categories -%}
+        {%- assign matchedSection = site.sections | where: "name", categoryName | first -%}
+        {%- if matchedSection -%}
+          <a href="/categories/{{ matchedSection.slug }}.html">{{ categoryName }}</a>
+        {%- else -%}
+          {{ categoryName }}
+        {%- endif -%}
+        {%- unless forloop.last %} {% endunless -%}
+      {%- endfor %}
+      {%- endif %}
+    </span>
+    <span class="post-meta-right">
+      {%- if page.previous %}<a href="{{ page.previous.url }}">上一篇</a>{% else %}<span class="disabled">上一篇</span>{% endif %}
+       ｜ 
+      {%- if page.next %}<a href="{{ page.next.url }}">下一篇</a>{% else %}<span class="disabled">下一篇</span>{% endif %}
+    </span>
+  </div>
+
+  <!-- 正文 -->
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+</article>

@@ -1,0 +1,54 @@
+# ============================================================
+# 站点基础配置
+# ============================================================
+
+# 博客名称（显示在页头，红色大字）
+title: 大家好我是尹煜同学
+
+# 站点地址
+url: "https://dreameryin.github.io"
+
+# 站点描述（SEO 用）
+description: 分享人工智能、虚幻引擎、Unity 引擎、软件架构等技术经验
+
+# 时区
+timezone: Asia/Shanghai
+
+# 文章永久链接格式：/202611/文章名.html（仿 gov.cn 风格）
+permalink: /:year:month/:title.html
+
+# Markdown 渲染器与代码高亮
+markdown: kramdown
+highlighter: rouge
+
+# ============================================================
+# 栏目配置（页头导航 + 首页栏目块都由这里驱动）
+# 新增分类只需两步：
+#   1. 在下面加一项（slug 用英文，name 用中文显示名）
+#   2. 在 categories/ 目录复制一个现有分类页，改里面两个字段
+# ============================================================
+sections:
+  - slug: ai
+    name: 人工智能
+  - slug: ue
+    name: 虚幻引擎
+  - slug: unity
+    name: Unity 引擎
+  - slug: architecture
+    name: 软件架构
+
+# ============================================================
+# 文章默认值：_posts/ 下的文章自动使用 post 布局
+# ============================================================
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+# 不参与构建的文件
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

@@ -1,12 +1,56 @@
+---
+layout: default
+---
 
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人博客</title>
-</head>
-<body>
-    <h1>你好，世界</h1>
-</body>
-</html>
+{% comment %} 焦点文章：取最近一篇 front matter 带 featured: true 的文章；一篇都没有则取最新文章 {% endcomment %}
+{% assign featuredList = site.posts | where: "featured", true %}
+{% assign featured = featuredList.first %}
+{% unless featured %}{% assign featured = site.posts.first %}{% endunless %}
+
+{% if featured %}
+<!-- 焦点区：大标题居中 + 左图右最新文章列表 -->
+<section class="featured container">
+  <h2 class="featured-title"><a href="{{ featured.url }}">{{ featured.title }}</a></h2>
+  <p class="featured-meta">{{ featured.date | date: "%Y-%m-%d" }} ｜ {{ featured.categories | join: " " }}</p>
+  <div class="featured-body">
+    <a class="featured-image" href="{{ featured.url }}">
+      <img src="{% if featured.image %}{{ featured.image }}{% else %}/assets/images/featured/default.svg{% endif %}" alt="{{ featured.title }}">
+    </a>
+    <div class="latest-block">
+      <div class="block-head">
+        <h3>最新文章</h3>
+      </div>
+      <ul class="block-list">
+        {% for post in site.posts limit:6 %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- 栏目区块：2×2 网格，由 _config.yml 的 sections 驱动 -->
+<section class="section-grid container">
+  {% for section in site.sections %}
+  <div class="section-block">
+    <div class="block-head">
+      <h3>{{ section.name }}</h3>
+      <a class="more-link" href="/categories/{{ section.slug }}.html">更多 &gt;&gt;</a>
+    </div>
+    <ul class="block-list with-date">
+      {% assign sectionPosts = site.categories[section.name] %}
+      {% if sectionPosts and sectionPosts.size > 0 %}
+        {% for post in sectionPosts limit:6 %}
+        <li>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+          <span class="date">{{ post.date | date: "%m-%d" }}</span>
+        </li>
+        {% endfor %}
+      {% else %}
+        <li class="empty">暂无文章</li>
+      {% endif %}
+    </ul>
+  </div>
+  {% endfor %}
+</section>

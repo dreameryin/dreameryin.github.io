@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <rect width="640" height="360" fill="#1b3a6b"/>
+  <g stroke="#ffffff" stroke-opacity="0.12" stroke-width="1">
+    <line x1="0" y1="90" x2="640" y2="90"/>
+    <line x1="0" y1="270" x2="640" y2="270"/>
+    <line x1="160" y1="0" x2="160" y2="360"/>
+    <line x1="480" y1="0" x2="480" y2="360"/>
+  </g>
+  <circle cx="320" cy="180" r="110" fill="none" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+  <text x="320" y="176" font-size="40" fill="#ffffff" text-anchor="middle" font-family="sans-serif">焦点文章</text>
+  <text x="320" y="216" font-size="16" fill="#9db8dd" text-anchor="middle" font-family="sans-serif" letter-spacing="2">dreameryin.github.io</text>
+</svg>

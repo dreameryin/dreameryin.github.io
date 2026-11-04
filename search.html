@@ -1,0 +1,22 @@
+---
+layout: default
+title: 搜索
+---
+
+<div class="search-page container-narrow">
+
+  <!-- 居中搜索栏 -->
+  <form class="search-bar" action="/search.html" method="get">
+    <input type="text" name="q" id="search-page-input" placeholder="请输入关键词" autocomplete="off">
+    <button type="submit">搜索</button>
+  </form>
+
+  <!-- 结果统计 -->
+  <p class="search-count" id="search-count"></p>
+
+  <!-- 结果列表 -->
+  <div class="search-results" id="search-results"></div>
+
+</div>
+
+<script src="/assets/js/search.js"></script>
