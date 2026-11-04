@@ -451,7 +451,7 @@ ul {
 .post {
   max-width: 1070px;
   margin: 0 auto;
-  padding: 30px 60px 80px;
+  padding: 50px 60px 80px;
 }
 
 /* 正文标题：gov.cn 文章页 h1 实测（38px 微软雅黑、常规粗细、居中、#333 黑色系、行高 56px） */
@@ -473,7 +473,7 @@ ul {
   font-family: "SimSun", "宋体", "Noto Serif SC", serif;
   font-size: 16px;
   color: #999999;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #dcdcdc;
   padding-bottom: 14px;
   margin-top: 16px;
 }
