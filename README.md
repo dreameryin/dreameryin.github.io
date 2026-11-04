@@ -39,7 +39,7 @@
 | 字段 | 必填 | 说明 |
 |------|------|------|
 | `title` | 是 | 文章标题 |
-| `categories` | 是 | 分类，只能填已存在的栏目名：人工智能 / 虚幻引擎 / Unity 引擎 / 软件架构 |
+| `categories` | 是 | 分类，只能填已存在的栏目名：人工智能 / 虚幻引擎 / Unity引擎 / 软件架构 |
 | `featured` | 否 | 写 `featured: true` 即进入首页焦点区轮播（最近 3 篇带此标记的文章参与轮播，自动切换） |
 | `image` | 否 | 焦点区配图路径。不写则自动用 `assets/images/featured/default.svg`；文件夹里预置了 ai/ue/unity/architecture 等主题图，可指定，如 `image: /assets/images/featured/ue.svg` |
 | `summary` | 否 | 文章一句话摘要，显示在首页头条大标题下方。不写则自动截取正文第一段（限 90 字） |
