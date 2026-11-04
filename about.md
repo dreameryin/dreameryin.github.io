@@ -3,7 +3,7 @@ layout: default
 title: 关于我
 ---
 
-<div class="container-narrow about-page">
+<div class="container about-page">
   <h1 class="post-title">关于我</h1>
   <div class="post-content">
     <p>大家好，我是尹煜同学。</p>
