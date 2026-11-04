@@ -1,6 +1,8 @@
 ---
 layout: post
 title: 关于我
+date: 2026-11-04 18:00:00 +0800
+categories: [关于我]
 ---
 
 大家好，我是尹煜同学。

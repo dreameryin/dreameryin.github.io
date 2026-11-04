@@ -447,17 +447,22 @@ ul {
 }
 
 /* ---------- 文章页 ---------- */
+/* 文章页正文栏：gov.cn 文章页实测 .oneColumn（950px 居中、左右各 60px 内边距） */
 .post {
-  padding-top: 36px;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 30px 60px 80px;
 }
 
-/* 正文标题：与首页头条大标题同款（38px #015293 常规粗细居中） */
+/* 正文标题：gov.cn 文章页 h1 实测（38px 微软雅黑、常规粗细、居中、#333 黑色系、行高 56px） */
 .post-title {
   text-align: center;
+  font-family: "Microsoft YaHei", "微软雅黑", "SimSun", "宋体", sans-serif;
   font-size: 38px;
   font-weight: normal;
-  line-height: 1.5;
-  color: #015293;
+  line-height: 1.47;
+  color: #333333;
+  padding-bottom: 26px;
 }
 
 .post-meta {
@@ -758,7 +763,11 @@ ul {
     font-size: 16px;
   }
 
-  /* 文章页：标题缩小，正文长串自动断行，表格内部横向滚动 */
+  /* 文章页：正文栏收窄内边距，标题缩小，正文长串自动断行，表格内部横向滚动 */
+  .post {
+    padding: 20px 16px 40px;
+  }
+
   .post-title {
     font-size: 24px;
   }
