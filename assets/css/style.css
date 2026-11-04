@@ -59,12 +59,29 @@ ul {
 
 .site-brand {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
   flex-shrink: 0;
 }
 
 .site-brand:hover {
   color: inherit;
+}
+
+/* 站点 Logo：方形头像裁圆形，置于标题左侧 */
+.site-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+.site-brand-text {
+  display: flex;
+  flex-direction: column;
 }
 
 .site-title {
@@ -168,11 +185,11 @@ ul {
   color: #015293;
 }
 
-/* 头条副标题：文章摘要（front matter 的 summary，缺省取正文第一段） */
+/* 头条副标题：文章摘要，颜色与大标题一致（front matter 的 summary，缺省取正文第一段） */
 .featured-meta {
   text-align: center;
   font-size: 19px;
-  color: #444444;
+  color: #015293;
   line-height: 1.7;
   margin-top: 12px;
 }
@@ -358,7 +375,7 @@ ul {
 }
 
 .section-grid .block-list li {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 2.5;
 }
 
@@ -644,16 +661,23 @@ ul {
 
 /* ---------- 响应式：窄屏适配（手机竖屏一屏完整显示，无横向滚动） ---------- */
 @media (max-width: 768px) {
-  /* 页头：只保留 标题 + 搜索框，右侧分类导航隐藏 */
+  /* 页头：标题 + 搜索框一行，分类导航自动换行显示 */
   .header-inner {
     min-height: 0;
     padding: 14px 0;
     gap: 12px;
+    flex-wrap: wrap;
   }
 
   .site-brand {
     flex-shrink: 1;
     min-width: 0;
+    gap: 10px;
+  }
+
+  .site-logo {
+    width: 40px;
+    height: 40px;
   }
 
   .site-title {
@@ -667,7 +691,11 @@ ul {
   }
 
   .site-nav {
-    display: none;
+    width: 100%;
+    margin-left: 0;
+    white-space: normal;
+    font-size: 14px;
+    line-height: 2;
   }
 
   .header-search {

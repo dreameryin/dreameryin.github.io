@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ site.description }}">
+  <link rel="icon" href="/assets/images/logo.jpg">
   <link rel="stylesheet" href="/assets/css/style.css?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
 </head>
 <body>
@@ -13,8 +14,11 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="site-brand" href="/">
-        <span class="site-title">{{ site.title }}</span>
-        <span class="site-domain">dreameryin.github.io</span>
+        <img class="site-logo" src="/assets/images/logo.jpg" alt="{{ site.title }}">
+        <span class="site-brand-text">
+          <span class="site-title">{{ site.title }}</span>
+          <span class="site-domain">dreameryin.github.io</span>
+        </span>
       </a>
       <form class="header-search" action="/search.html" method="get">
         <input type="text" name="q" placeholder="请输入关键词" autocomplete="off">
