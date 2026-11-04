@@ -447,9 +447,9 @@ ul {
 }
 
 /* ---------- 文章页 ---------- */
-/* 文章页正文栏：gov.cn 文章页实测 .oneColumn（950px 居中、左右各 60px 内边距） */
+/* 文章页正文栏：gov.cn 文章页实测 .oneColumn（content-box 宽度 950px = 纯文字宽，左右各 60px 内边距，总宽 1070px） */
 .post {
-  max-width: 950px;
+  max-width: 1070px;
   margin: 0 auto;
   padding: 30px 60px 80px;
 }
@@ -465,11 +465,13 @@ ul {
   padding-bottom: 26px;
 }
 
+/* 元信息行：字体字号与正文一致（宋体 16px），颜色保持现状 */
 .post-meta {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 14px;
+  font-family: "SimSun", "宋体", "Noto Serif SC", serif;
+  font-size: 16px;
   color: #999999;
   border-bottom: 1px solid #eeeeee;
   padding-bottom: 14px;
