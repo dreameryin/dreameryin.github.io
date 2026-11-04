@@ -223,10 +223,11 @@ ul {
   display: block;
 }
 
-/* 焦点图：宽高比 660:435（gov.cn .news .focus 实测比例） */
+/* 焦点图：宽高比 850:477（gov.cn 首页焦点图文件实测像素） */
 .fcarousel-slide img {
   width: 100%;
-  aspect-ratio: 660 / 435;
+  /* gov.cn 焦点图实际文件 850×477（宽高比 1.78），按其比例显示 */
+  aspect-ratio: 850 / 477;
   height: auto;
   object-fit: cover;
   display: block;
