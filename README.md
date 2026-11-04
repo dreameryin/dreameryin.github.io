@@ -40,7 +40,7 @@
 |------|------|------|
 | `title` | 是 | 文章标题 |
 | `categories` | 是 | 分类，只能填已存在的栏目名：人工智能 / 虚幻引擎 / Unity 引擎 / 软件架构 |
-| `featured` | 否 | 写 `featured: true` 即置顶到首页焦点区（只保留一篇带此标记，最新的生效） |
+| `featured` | 否 | 写 `featured: true` 即进入首页焦点区轮播（最近 3 篇带此标记的文章参与轮播，自动切换） |
 | `image` | 否 | 焦点区配图路径。不写则自动用 `assets/images/featured/default.svg`；文件夹里预置了 ai/ue/unity/architecture 等主题图，可指定，如 `image: /assets/images/featured/ue.svg` |
 
 ## 三、文章里插图 / 视频 / 代码

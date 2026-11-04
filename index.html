@@ -2,20 +2,34 @@
 layout: default
 ---
 
-{% comment %} 焦点文章：取最近一篇 front matter 带 featured: true 的文章；一篇都没有则取最新文章 {% endcomment %}
+{% comment %} 焦点文章：取最近 3 篇 front matter 带 featured: true 的文章轮播；一篇都没有则取最新文章 {% endcomment %}
 {% assign featuredList = site.posts | where: "featured", true %}
-{% assign featured = featuredList.first %}
-{% unless featured %}{% assign featured = site.posts.first %}{% endunless %}
+{% if featuredList.size == 0 %}{% assign featuredList = site.posts %}{% endif %}
+{% assign topFeatured = featuredList.first %}
 
-{% if featured %}
-<!-- 焦点区：大标题居中 + 左图右最新文章列表 -->
+{% if topFeatured %}
+<!-- 焦点区：大标题居中 + 左侧轮播（图下显示当前文章标题） + 右最新文章列表 -->
 <section class="featured container">
-  <h2 class="featured-title"><a href="{{ featured.url }}">{{ featured.title }}</a></h2>
-  <p class="featured-meta">{{ featured.date | date: "%Y-%m-%d" }} ｜ {{ featured.categories | join: " " }}</p>
+  <h2 class="featured-title"><a href="{{ topFeatured.url }}">{{ topFeatured.title }}</a></h2>
+  <p class="featured-meta">{{ topFeatured.date | date: "%Y-%m-%d" }} ｜ {{ topFeatured.categories | join: " " }}</p>
   <div class="featured-body">
-    <a class="featured-image" href="{{ featured.url }}">
-      <img src="{% if featured.image %}{{ featured.image }}{% else %}/assets/images/featured/default.svg{% endif %}" alt="{{ featured.title }}">
-    </a>
+    <div class="fcarousel-wrap">
+      <div class="fcarousel" id="fcarousel">
+        {% for post in featuredList limit:3 %}
+        <a class="fcarousel-slide{% if forloop.first %} active{% endif %}" href="{{ post.url }}" data-title="{{ post.title | escape }}">
+          <img src="{% if post.image %}{{ post.image }}{% else %}/assets/images/featured/default.svg{% endif %}" alt="{{ post.title | escape }}">
+        </a>
+        {% endfor %}
+        <button class="fcarousel-arrow prev" type="button" aria-label="上一张">&#10094;</button>
+        <button class="fcarousel-arrow next" type="button" aria-label="下一张">&#10095;</button>
+        <div class="fcarousel-dots">
+          {% for post in featuredList limit:3 %}
+          <button class="fcarousel-dot{% if forloop.first %} active{% endif %}" type="button" aria-label="第 {{ forloop.index }} 张"></button>
+          {% endfor %}
+        </div>
+      </div>
+      <p class="fcarousel-caption"><a id="fcarousel-caption-link" href="{{ topFeatured.url }}">{{ topFeatured.title }}</a></p>
+    </div>
     <div class="latest-block">
       <div class="block-head">
         <h3>最新文章</h3>
@@ -28,6 +42,7 @@ layout: default
     </div>
   </div>
 </section>
+<script src="/assets/js/carousel.js?v={{ site.time | date: '%Y%m%d%H%M%S' }}"></script>
 {% endif %}
 
 <!-- 栏目区块：2×2 网格，由 _config.yml 的 sections 驱动 -->
