@@ -11,7 +11,7 @@ layout: default
 <!-- 焦点区：大标题居中 + 左侧轮播（图下显示当前文章标题） + 右最新文章列表 -->
 <section class="featured container">
   <h2 class="featured-title"><a href="{{ topFeatured.url }}">{{ topFeatured.title }}</a></h2>
-  <p class="featured-meta">{{ topFeatured.date | date: "%Y-%m-%d" }} ｜ {{ topFeatured.categories | join: " " }}</p>
+  <p class="featured-meta">{{ topFeatured.summary | default: topFeatured.excerpt | strip_html | strip_newlines | truncate: 90 }}</p>
   <div class="featured-body">
     <div class="fcarousel-wrap">
       <div class="fcarousel" id="fcarousel">

@@ -168,23 +168,25 @@ ul {
   color: #015293;
 }
 
+/* 头条副标题：文章摘要（front matter 的 summary，缺省取正文第一段） */
 .featured-meta {
   text-align: center;
-  font-size: 16px;
-  color: #015293;
-  margin-top: 10px;
+  font-size: 19px;
+  color: #444444;
+  line-height: 1.7;
+  margin-top: 12px;
 }
 
-/* 焦点区主体：左轮播图 + 右最新文章列表，左右上下对齐 */
+/* 焦点区主体：左轮播图 + 右最新文章列表 */
 .featured-body {
   display: flex;
   gap: 40px;
   margin-top: 32px;
-  align-items: stretch;
+  align-items: flex-start;
 }
 
 .fcarousel-wrap {
-  width: 56%;
+  width: 48%;
   flex-shrink: 0;
 }
 
@@ -269,9 +271,10 @@ ul {
   padding: 12px 0 0;
 }
 
-/* 右侧最新文章列表：拉伸与左侧对齐，条目均匀分布 */
+/* 右侧最新文章列表：高度锁定 = 焦点图高度，顶部与图顶对齐、底部与图底对齐（不含图下标题） */
 .latest-block {
   flex: 1;
+  height: 320px;
   display: flex;
   flex-direction: column;
 }
@@ -356,6 +359,7 @@ ul {
 
 .section-grid .block-list li {
   font-size: 16px;
+  line-height: 2.5;
 }
 
 /* ---------- 分类列表页 ---------- */
@@ -638,42 +642,98 @@ ul {
   color: #d43c3c;
 }
 
-/* ---------- 响应式：窄屏适配 ---------- */
+/* ---------- 响应式：窄屏适配（手机竖屏一屏完整显示，无横向滚动） ---------- */
 @media (max-width: 768px) {
+  /* 页头：只保留 标题 + 搜索框，右侧分类导航隐藏 */
   .header-inner {
-    display: flex;
-    flex-wrap: wrap;
+    min-height: 0;
+    padding: 14px 0;
     gap: 12px;
   }
 
+  .site-brand {
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  .site-title {
+    font-size: 20px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
+  .site-domain {
+    display: none;
+  }
+
   .site-nav {
-    white-space: normal;
+    display: none;
   }
 
   .header-search {
-    width: 100%;
-    order: 3;
+    width: auto;
+    flex: 1;
+    min-width: 0;
+    height: 34px;
+    margin-left: 0;
+    flex-shrink: 1;
   }
 
+  /* 焦点区：轮播与列表上下排列，图高随屏缩 */
   .featured-title {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .featured-body {
     flex-direction: column;
+    gap: 24px;
   }
 
   .fcarousel-wrap {
     width: 100%;
   }
 
+  .fcarousel-slide img {
+    height: 200px;
+  }
+
+  .latest-block {
+    height: auto;
+  }
+
+  /* 栏目块：单栏 */
   .section-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .block-head h3 {
+    font-size: 22px;
+  }
+
+  .block-list li,
+  .post-list-title {
+    font-size: 16px;
+  }
+
+  /* 文章页：标题缩小，正文长串自动断行，表格内部横向滚动 */
+  .post-title {
+    font-size: 24px;
   }
 
   .post-meta {
     flex-direction: column;
     gap: 6px;
     align-items: flex-start;
+  }
+
+  .post-content {
+    font-size: 16px;
+    overflow-wrap: break-word;
+  }
+
+  .post-content table {
+    display: block;
+    overflow-x: auto;
   }
 }
