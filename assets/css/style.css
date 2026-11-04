@@ -387,11 +387,13 @@ ul {
 }
 
 /* ---------- 分类列表页 ---------- */
+/* 栏目条：对标 gov.cn .channel_tab（底部 2px 深蓝线 #004986） */
 .section-bar {
   display: flex;
   align-items: center;
   background: #f4f6f9;
-  border-radius: 3px;
+  border-radius: 3px 3px 0 0;
+  border-bottom: 2px solid #004986;
   margin-top: 28px;
   margin-bottom: 22px;
 }
