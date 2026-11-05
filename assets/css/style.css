@@ -833,8 +833,11 @@ ul {
 
   .site-nav {
     order: 3;
-    width: 100%;
-    margin-left: 0;
+    width: auto;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0 auto;
+    text-align: center;
     white-space: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -847,15 +850,20 @@ ul {
     display: none;
   }
 
-  /* 搜索框：不再左右顶满，收窄后居中 */
+  /* 搜索框：跟在站名右侧，占据剩余宽度，最小宽度保证可输入 */
   .header-search {
     order: 2;
-    width: 100%;
-    max-width: 240px;
-    flex: 0 0 auto;
-    min-width: 0;
+    width: auto;
+    max-width: none;
+    flex: 1 1 auto;
+    min-width: 80px;
     height: 34px;
-    margin: 0 auto;
+    margin: 0;
+    padding: 0 12px;
+  }
+
+  .header-search input {
+    font-size: 13px;
   }
 
   /* 焦点区：单栏堆叠，顺序 = 图 → 图下标题 → 最新文章 */
