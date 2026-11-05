@@ -847,13 +847,15 @@ ul {
     display: none;
   }
 
+  /* 搜索框：不再左右顶满，收窄后居中 */
   .header-search {
     order: 2;
     width: 100%;
-    flex: 1 1 100%;
+    max-width: 240px;
+    flex: 0 0 auto;
     min-width: 0;
     height: 34px;
-    margin-left: 0;
+    margin: 0 auto;
   }
 
   /* 焦点区：单栏堆叠，顺序 = 图 → 图下标题 → 最新文章 */
