@@ -302,6 +302,16 @@ ul {
   min-width: 0;
 }
 
+/* 与焦点图上/下边缘视觉对齐：行盒的半行距会让文字上下各空出一截，
+   顶部标题行高 1.6→1.15（文字上移约 6px），末条行高 1.6→1（底部空隙归零） */
+.latest-block .block-head h3 {
+  line-height: 1.15;
+}
+
+.latest-block .block-list li:last-child {
+  line-height: 1;
+}
+
 .latest-block .block-list {
   flex: 1;
   display: flex;
