@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#020617"/><stop offset="0.6" stop-color="#0c4a6e"/><stop offset="1" stop-color="#0891b2"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#bg)"/>
+  <g stroke="#ffffff" stroke-opacity="0.05"><line x1="0" y1="120" x2="640" y2="120"/><line x1="0" y1="240" x2="640" y2="240"/><line x1="160" y1="0" x2="160" y2="360"/><line x1="480" y1="0" x2="480" y2="360"/></g>
+  <g fill="none" stroke="#67e8f9" stroke-width="1.5" stroke-opacity="0.5">
+    <polygon points="320,80 372,110 372,170 320,200 268,170 268,110"/>
+    <polygon points="424,110 476,140 476,200 424,230 372,200 372,140"/>
+    <polygon points="216,110 268,140 268,200 216,230 164,200 164,140"/>
+    <polygon points="320,200 372,230 372,290 320,320 268,290 268,230"/>
+  </g>
+  <polygon points="320,110 348,126 348,158 320,174 292,158 292,126" fill="#fbbf24" stroke="#fde68a" stroke-width="2"/>
+  <circle cx="320" cy="190" r="150" fill="none" stroke="#67e8f9" stroke-opacity="0.1" stroke-width="2"/>
+  <text x="30" y="330" font-size="15" fill="#a5f3fc" fill-opacity="0.6" font-family="system-ui, sans-serif" letter-spacing="3">UE · 04</text>
+</svg>
