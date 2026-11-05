@@ -1,6 +1,6 @@
 # 大家好我是尹煜同学
 
-个人技术博客，基于 Jekyll + GitHub Pages。线上地址：https://dreameryin.github.io/
+个人技术博客，基于 Jekyll + GitHub Pages。线上地址：https://dreameryin.com/
 
 ---
 

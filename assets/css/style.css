@@ -105,6 +105,11 @@ ul {
   margin-top: 2px;
 }
 
+/* 域名中的主域名部分：与站点标题同色（红） */
+.site-domain-name {
+  color: #c7000b;
+}
+
 /* 搜索框：与导航组成右对齐组（gov.cn 同款位置），高38px 圆角20px 背景#f0f0f0 */
 .header-search {
   display: flex;
