@@ -210,6 +210,21 @@ ul {
   overflow: hidden;
 }
 
+/* 副标题整体也是链接（跳转到同一篇文章）：颜色继承副标题，
+   截断规则一并复制到 a 上，避免外层 -webkit-box 把 a 块化后丢失两行截断 */
+.featured-meta a {
+  color: inherit;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+.featured-meta a:hover {
+  text-decoration: underline;
+}
+
 /* 焦点区主体：grid 两列（54:46，对标 gov.cn 660+510）。图下标题独占第二行，
    第一行行高由焦点图决定，右侧列表随网格拉伸，天然与图片顶/底对齐 */
 .featured-body {
