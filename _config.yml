@@ -9,7 +9,7 @@ title: 大家好我是尹煜同学
 url: "https://dreameryin.com"
 
 # 站点描述（SEO 用）
-description: 分享人工智能、虚幻引擎、Unity引擎、软件架构等技术经验
+description: 分享人工智能、虚幻引擎、Unity引擎、软件开发等技术经验
 
 # 时区
 timezone: Asia/Shanghai
@@ -37,7 +37,7 @@ sections:
   - slug: unity
     name: Unity引擎
   - slug: architecture
-    name: 软件架构
+    name: 软件开发
     nav: false          # false = 不显示在页头导航（首页栏目块和分类页仍然保留）
 
 # ============================================================
@@ -65,9 +65,9 @@ defaults:
     values:
       categories: ["Unity引擎"]
   - scope:
-      path: "_posts/软件架构"
+      path: "_posts/软件开发"
     values:
-      categories: ["软件架构"]
+      categories: ["软件开发"]
   - scope:
       path: "_posts/关于我"
     values:
