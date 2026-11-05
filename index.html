@@ -49,7 +49,7 @@ layout: default
 <!-- 栏目区块：第一行 3 栏（人工智能/虚幻引擎/Unity引擎），第二行 软件开发1栏 + 作品展示2栏，由 _config.yml 的 sections 驱动 -->
 <section class="section-grid container">
   {% for section in site.sections %}
-  <div class="section-block">
+  <div class="section-block{% if section.slug == 'architecture' %} dev-block{% endif %}">
     <div class="block-head">
       <h3>{{ section.name }}</h3>
       <a class="more-link" href="/categories/{{ section.slug }}.html">更多 &gt;&gt;</a>
