@@ -721,6 +721,12 @@ ul {
     padding: 0 16px;
   }
 
+  /* 上面的 .container padding 会连带覆盖 .search-page 的 padding-top（优先级相同、后写生效），
+     导致搜索框与页头分割线相贴，这里重新声明顶部间距 */
+  .search-page {
+    padding-top: 24px;
+  }
+
   /* 页头：标题 + 搜索框一行，分类导航自动换行显示 */
   .header-inner {
     min-height: 0;
@@ -775,6 +781,10 @@ ul {
   }
 
   /* 焦点区：单栏堆叠，顺序 = 图 → 图下标题 → 最新文章 */
+  .featured {
+    padding-top: 56px;
+  }
+
   .featured-title {
     font-size: 24px;
   }
@@ -782,6 +792,7 @@ ul {
   .featured-body {
     grid-template-columns: 1fr;
     row-gap: 24px;
+    margin-top: 14px;
   }
 
   .fcarousel-wrap {
@@ -813,14 +824,25 @@ ul {
   }
 
   /* 移动端栏目块列表：去掉圆点，每条之间加细分隔线（gov.cn 手机端样式） */
-  .section-grid .block-list li::before {
+  .section-grid .block-list li::before,
+  .latest-block .block-list li::before {
     content: none;
   }
 
-  .section-grid .block-list li {
+  .section-grid .block-list li,
+  .latest-block .block-list li {
     border-bottom: 1px solid #eeeeee;
     padding: 10px 0;
     line-height: 1.6;
+  }
+
+  /* 移动端「最新文章」列表：字号/行高/颜色与下方栏目块完全一致（覆盖桌面端 20px） */
+  .latest-block .block-list li {
+    font-size: 16px;
+  }
+
+  .latest-block .block-list {
+    justify-content: flex-start;
   }
 
   /* 文章页：正文栏收窄内边距，标题缩小，正文长串自动断行，表格内部横向滚动 */
