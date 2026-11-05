@@ -906,10 +906,12 @@ ul {
     padding-top: 24px;
   }
 
-  /* 页头：标题 + 搜索框一行，分类导航自动换行显示 */
+  /* 页头：标题 + 搜索框一行，分类导航自动换行显示。
+     只用 padding-top/bottom，不用 padding 简写，避免把 .container 的左右 16px 留白覆盖掉 */
   .header-inner {
     min-height: 0;
-    padding: 14px 0;
+    padding-top: 14px;
+    padding-bottom: 14px;
     gap: 12px;
     flex-wrap: wrap;
   }
