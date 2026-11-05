@@ -52,7 +52,7 @@
 
 | 内容 | 写法 |
 |------|------|
-| 图片 | 图片放到 `assets/images/`，正文写 `![描述](/assets/images/xxx.png)` |
+| 图片 | 图片放 `assets/images/posts/<分类>/`，文件名加文章名前缀防重名（如 `引擎安装-1.png`），正文写 `![描述](/assets/images/posts/虚幻引擎/引擎安装-1.png)` |
 | 站内视频（mp4） | `<video src="/assets/videos/demo.mp4" controls width="100%"></video>` |
 | B站视频 | 直接粘贴 B 站分享的 iframe 嵌入代码（Markdown 可混写 HTML） |
 | 代码块 | 三个反引号 + 语言名（如 ` ```csharp `），自动语法高亮 |
@@ -94,7 +94,7 @@ push 后导航、首页栏目块、分类页自动出现。
 |------|--------|
 | 改博客名 | `_config.yml` 的 `title` |
 | 改页脚 | `_layouts/default.html` 底部的 footer |
-| 改关于我 | `_posts/2026-11-04-about.md`（头部带 `hidden: true`，不会出现在任何文章列表；`permalink: /about.html` 保证网址不变） |
+| 改关于我 | `_posts/关于我/2025-11-04-about.md`（头部带 `hidden: true`，不会出现在任何文章列表；`permalink: /about.html` 保证网址不变） |
 | 改配色样式 | `assets/css/style.css` |
 
 ## 六、本地预览（可选，不装也不影响使用）
