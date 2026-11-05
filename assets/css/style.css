@@ -892,13 +892,19 @@ ul {
     gap: 32px;
   }
 
+  /* 移动端栏目块去掉卡片外观（背景 + 内边距归零），与「最新文章」块保持同一种朴素样式 */
+  .section-block {
+    background: transparent;
+    padding: 0;
+  }
+
   /* 移动端作品展示：不再跨栏，作品项竖排 */
   .works-block {
     grid-column: auto;
   }
 
   .works-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .block-head h3 {
