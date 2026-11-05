@@ -255,7 +255,7 @@ ul {
    行数截断：最多 2 行，超出才在末尾加省略号；宽度自适应，不按字数硬切 */
 .featured-meta {
   text-align: center;
-  font-size: 19px;
+  font-size: 20px;
   color: #015293;
   line-height: 1.7;
   margin-top: 6px;
@@ -927,13 +927,13 @@ ul {
     display: none;
   }
 
-  /* 搜索框：跟在站名右侧，占据剩余宽度，最小宽度保证可输入 */
+  /* 搜索框：跟在站名右侧，固定窄宽（不占满剩余空间） */
   .header-search {
     order: 2;
-    width: auto;
+    width: 88px;
     max-width: none;
-    flex: 1 1 auto;
-    min-width: 80px;
+    flex: 0 0 auto;
+    min-width: 0;
     height: 34px;
     margin: 0;
     padding: 0 12px;
