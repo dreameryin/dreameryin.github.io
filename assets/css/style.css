@@ -394,19 +394,64 @@ ul {
 
 .section-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px 60px;
+  /* 第一行 3 栏（人工智能/虚幻引擎/Unity引擎），第二行由 .works-block 跨 2 栏、软件架构自动占 1 栏 */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
   margin-top: 44px;
 }
 
-/* 栏目块作为 grid 项：允许收缩到 1fr 轨道宽度，避免长标题把网格撑出横向滚动 */
+/* 栏目块作为 grid 项：允许收缩到 1fr 轨道宽度，避免长标题把网格撑出横向滚动。
+   卡片背景取参考图(gov.cn)实测浅灰 #f7f7f7；标题/列表/圆点/日期等其余样式一律保持原样 */
 .section-block {
   min-width: 0;
+  background: #f7f7f7;
+  padding: 20px 22px;
+}
+
+/* 作品展示：第二行占 2 栏 */
+.works-block {
+  grid-column: 2 / 4;
+}
+
+.works-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.work-item {
+  display: block;
+  background: #ffffff;
+  border: 1px solid #ececec;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.work-item img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.work-item .work-name {
+  display: block;
+  padding: 10px 12px;
+  font-size: 15px;
+  color: #1a1a1a;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .section-grid .block-list li {
   font-size: 18px;
   line-height: 2.5;
+}
+
+/* 分栏卡片标题允许换行显示完整（3 栏卡片较窄，对齐 gov.cn 的换行列表），日期仍居右 */
+.section-grid .block-list li a {
+  white-space: normal;
 }
 
 /* ---------- 分类列表页 ---------- */
@@ -843,6 +888,15 @@ ul {
   .section-grid {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+
+  /* 移动端作品展示：不再跨栏，作品项竖排 */
+  .works-block {
+    grid-column: auto;
+  }
+
+  .works-row {
+    grid-template-columns: 1fr;
   }
 
   .block-head h3 {

@@ -46,7 +46,7 @@ layout: default
 <script src="/assets/js/carousel.js?v={{ site.time | date: '%Y%m%d%H%M%S' }}"></script>
 {% endif %}
 
-<!-- 栏目区块：2×2 网格，由 _config.yml 的 sections 驱动 -->
+<!-- 栏目区块：第一行 3 栏（人工智能/虚幻引擎/Unity引擎），第二行 软件架构1栏 + 作品展示2栏，由 _config.yml 的 sections 驱动 -->
 <section class="section-grid container">
   {% for section in site.sections %}
   <div class="section-block">
@@ -69,4 +69,25 @@ layout: default
     </ul>
   </div>
   {% endfor %}
+
+  <!-- 作品展示：第二行占 2 栏。作品为手工维护，要增删直接改下面几个 work-item（换图/名称/链接） -->
+  <div class="section-block works-block">
+    <div class="block-head">
+      <h3>作品展示</h3>
+    </div>
+    <div class="works-row">
+      <a class="work-item" href="#">
+        <img src="/assets/images/featured/unity.svg" alt="示例作品">
+        <span class="work-name">示例作品 · 游戏 Demo</span>
+      </a>
+      <a class="work-item" href="#">
+        <img src="/assets/images/featured/ue.svg" alt="示例作品">
+        <span class="work-name">示例作品 · 工具链插件</span>
+      </a>
+      <a class="work-item" href="#">
+        <img src="/assets/images/featured/ai.svg" alt="示例作品">
+        <span class="work-name">示例作品 · AI 应用</span>
+      </a>
+    </div>
+  </div>
 </section>
