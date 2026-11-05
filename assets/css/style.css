@@ -278,7 +278,7 @@ ul {
 }
 
 .featured-meta a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* 焦点区主体：grid 两列（54:46，对标 gov.cn 660+510）。图下标题独占第二行，
