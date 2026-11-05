@@ -485,9 +485,12 @@ ul {
 }
 
 /* 软件开发分栏：仅背景改为 gov.cn 专题卡片底色（淡蓝 #f3faff），
-   标题、文字、圆点、日期、内边距等一律不动 */
+   标题、文字、圆点、日期、内边距等一律不动；
+   min-height:0 + overflow:hidden 让文章数随卡片高度自适应（与右侧作品展示同高，超出裁掉） */
 .section-block.dev-block {
   background: #f3faff;
+  min-height: 0;
+  overflow: hidden;
 }
 
 /* 作品展示：第二行占 2 栏 */
@@ -544,6 +547,7 @@ ul {
   padding: 10px 12px;
   font-size: 15px;
   color: #1a1a1a;
+  text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1016,6 +1020,11 @@ ul {
   .section-block.dev-block {
     background: transparent;
     padding: 0;
+  }
+
+  /* 移动端软件开发分栏仍只显示 6 篇（桌面端按卡片高度自适应） */
+  .section-block.dev-block .block-list li:nth-child(n+7) {
+    display: none;
   }
 
   /* 移动端作品展示：不再跨栏，作品项竖排 */

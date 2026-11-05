@@ -57,7 +57,9 @@ layout: default
     <ul class="block-list with-date">
       {% assign sectionPosts = site.categories[section.name] %}
       {% if sectionPosts and sectionPosts.size > 0 %}
-        {% for post in sectionPosts limit:6 %}
+        {% comment %} 软件开发块不限制条数：全部输出，由 CSS 按卡片高度裁切，自适应填满；其他分栏仍取 6 篇 {% endcomment %}
+        {% if section.slug == 'architecture' %}{% assign postLimit = 999 %}{% else %}{% assign postLimit = 6 %}{% endif %}
+        {% for post in sectionPosts limit:postLimit %}
         <li>
           <a href="{{ post.url }}">{{ post.title }}</a>
           <span class="date">{{ post.date | date: "%Y-%m-%d" }}</span>
@@ -76,41 +78,41 @@ layout: default
       <h3>作品展示</h3>
     </div>
     <div class="works-row">
-      <a class="work-item" href="#">
-        <img src="/assets/images/featured/unity.svg" alt="示例作品">
-        <span class="work-name">示例作品 · 游戏 Demo</span>
+      <a class="work-item" href="https://space.bilibili.com/411243119?spm_id_from=333.1007.0.0" target="_blank" rel="noopener">
+        <img src="/assets/images/featured/unity.svg" alt="示例作品1">
+        <span class="work-name">示例作品1</span>
       </a>
-      <a class="work-item" href="#">
-        <img src="/assets/images/featured/ue.svg" alt="示例作品">
-        <span class="work-name">示例作品 · 工具链插件</span>
+      <a class="work-item" href="https://space.bilibili.com/411243119?spm_id_from=333.1007.0.0" target="_blank" rel="noopener">
+        <img src="/assets/images/featured/ue.svg" alt="示例作品2">
+        <span class="work-name">示例作品2</span>
       </a>
-      <a class="work-item" href="#">
-        <img src="/assets/images/featured/ai.svg" alt="示例作品">
-        <span class="work-name">示例作品 · AI 应用</span>
+      <a class="work-item" href="https://space.bilibili.com/411243119?spm_id_from=333.1007.0.0" target="_blank" rel="noopener">
+        <img src="/assets/images/featured/ai.svg" alt="示例作品3">
+        <span class="work-name">示例作品3</span>
       </a>
-      <a class="work-item" href="#">
-        <img src="/assets/images/featured/unity.svg" alt="示例作品">
-        <span class="work-name">示例作品 4</span>
+      <a class="work-item" href="https://space.bilibili.com/411243119?spm_id_from=333.1007.0.0" target="_blank" rel="noopener">
+        <img src="/assets/images/featured/unity.svg" alt="示例作品4">
+        <span class="work-name">示例作品4</span>
       </a>
-      <a class="work-item" href="#">
-        <img src="/assets/images/featured/ue.svg" alt="示例作品">
-        <span class="work-name">示例作品 5</span>
+      <a class="work-item" href="https://space.bilibili.com/411243119?spm_id_from=333.1007.0.0" target="_blank" rel="noopener">
+        <img src="/assets/images/featured/ue.svg" alt="示例作品5">
+        <span class="work-name">示例作品5</span>
       </a>
-      <a class="work-item" href="#">
-        <img src="/assets/images/featured/ai.svg" alt="示例作品">
-        <span class="work-name">示例作品 6</span>
+      <a class="work-item" href="https://space.bilibili.com/411243119?spm_id_from=333.1007.0.0" target="_blank" rel="noopener">
+        <img src="/assets/images/featured/ai.svg" alt="示例作品6">
+        <span class="work-name">示例作品6</span>
       </a>
-      <a class="work-item" href="#">
-        <img src="/assets/images/featured/unity.svg" alt="示例作品">
-        <span class="work-name">示例作品 7</span>
+      <a class="work-item" href="https://space.bilibili.com/411243119?spm_id_from=333.1007.0.0" target="_blank" rel="noopener">
+        <img src="/assets/images/featured/unity.svg" alt="示例作品7">
+        <span class="work-name">示例作品7</span>
       </a>
-      <a class="work-item" href="#">
-        <img src="/assets/images/featured/ue.svg" alt="示例作品">
-        <span class="work-name">示例作品 8</span>
+      <a class="work-item" href="https://space.bilibili.com/411243119?spm_id_from=333.1007.0.0" target="_blank" rel="noopener">
+        <img src="/assets/images/featured/ue.svg" alt="示例作品8">
+        <span class="work-name">示例作品8</span>
       </a>
-      <a class="work-item" href="#">
-        <img src="/assets/images/featured/ai.svg" alt="示例作品">
-        <span class="work-name">示例作品 9</span>
+      <a class="work-item" href="https://space.bilibili.com/411243119?spm_id_from=333.1007.0.0" target="_blank" rel="noopener">
+        <img src="/assets/images/featured/ai.svg" alt="示例作品9">
+        <span class="work-name">示例作品9</span>
       </a>
     </div>
   </div>
