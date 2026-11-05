@@ -18,6 +18,8 @@ body {
   color: #1a1a1a;
   background: #ffffff;
   line-height: 1.6;
+  /* 横向溢出保护：任何子元素超出视口都不产生页面级左右滚动条（导航栏等内部滚动不受影响） */
+  overflow-x: hidden;
   /* 吸底页脚：内容不足一屏时页脚仍贴在视口底部，保证所有页面底部外观一致 */
   display: flex;
   flex-direction: column;
@@ -389,6 +391,11 @@ ul {
   grid-template-columns: 1fr 1fr;
   gap: 40px 60px;
   margin-top: 44px;
+}
+
+/* 栏目块作为 grid 项：允许收缩到 1fr 轨道宽度，避免长标题把网格撑出横向滚动 */
+.section-block {
+  min-width: 0;
 }
 
 .section-grid .block-list li {
@@ -767,6 +774,7 @@ ul {
   }
 
   .site-nav {
+    order: 3;
     width: 100%;
     margin-left: 0;
     white-space: nowrap;
@@ -782,21 +790,26 @@ ul {
   }
 
   .header-search {
-    width: auto;
-    flex: 1;
+    order: 2;
+    width: 100%;
+    flex: 1 1 100%;
     min-width: 0;
     height: 34px;
     margin-left: 0;
-    flex-shrink: 1;
   }
 
   /* 焦点区：单栏堆叠，顺序 = 图 → 图下标题 → 最新文章 */
   .featured {
-    padding-top: 56px;
+    padding-top: 20px;
   }
 
   .featured-title {
     font-size: 24px;
+  }
+
+  /* 头条副标题：字号与「最新文章」列表标题一致 */
+  .featured-meta {
+    font-size: 16px;
   }
 
   .featured-body {
@@ -812,6 +825,8 @@ ul {
   .fcarousel-caption {
     order: 2;
     margin-top: -12px;
+    /* 焦点图下文章标题：字号与「最新文章」列表标题一致 */
+    font-size: 16px;
   }
 
   .latest-block {
@@ -830,6 +845,11 @@ ul {
 
   .block-list li,
   .post-list-title {
+    font-size: 16px;
+  }
+
+  /* 栏目块（分栏）文章标题：桌面端 18px 优先级更高，需显式覆盖为与「最新文章」一致的 16px */
+  .section-grid .block-list li {
     font-size: 16px;
   }
 
