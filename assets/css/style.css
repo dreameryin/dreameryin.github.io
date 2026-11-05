@@ -950,7 +950,7 @@ ul {
     display: none;
   }
 
-  /* 搜索框：跟在站名右侧，固定窄宽（不占满剩余空间） */
+  /* 搜索框：跟在站名右侧固定窄宽，右对齐；不显示输入提示文字 */
   .header-search {
     order: 2;
     width: 88px;
@@ -958,8 +958,12 @@ ul {
     flex: 0 0 auto;
     min-width: 0;
     height: 34px;
-    margin: 0;
+    margin: 0 0 0 auto;
     padding: 0 12px;
+  }
+
+  .header-search input::placeholder {
+    color: transparent;
   }
 
   .header-search input {
