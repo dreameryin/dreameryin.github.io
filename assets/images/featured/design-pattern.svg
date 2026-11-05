@@ -1,40 +1,43 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#022c22"/>
-      <stop offset="0.55" stop-color="#065f46"/>
-      <stop offset="1" stop-color="#166534"/>
+      <stop offset="0" stop-color="#04120c"/><stop offset="0.55" stop-color="#052e1a"/><stop offset="1" stop-color="#064e3b"/>
     </linearGradient>
   </defs>
-
   <rect width="640" height="360" fill="url(#bg)"/>
 
-  <!-- 网格装饰 -->
-  <g stroke="#ffffff" stroke-opacity="0.06" stroke-width="1">
-    <line x1="0" y1="80" x2="640" y2="80"/>
-    <line x1="0" y1="220" x2="640" y2="220"/>
-    <line x1="130" y1="0" x2="130" y2="360"/>
-    <line x1="510" y1="0" x2="510" y2="360"/>
+  <!-- 星点背景 -->
+  <g fill="#d1fae5">
+    <circle cx="80" cy="60" r="1.5"/><circle cx="160" cy="40" r="1"/><circle cx="240" cy="70" r="1.5"/>
+    <circle cx="520" cy="50" r="1.5"/><circle cx="580" cy="90" r="1"/><circle cx="60" cy="300" r="1.5"/>
+    <circle cx="120" cy="320" r="1"/><circle cx="560" cy="310" r="1.5"/><circle cx="600" cy="260" r="1"/>
+    <circle cx="40" cy="180" r="1"/><circle cx="610" cy="160" r="1"/><circle cx="300" cy="30" r="1"/>
+    <circle cx="420" cy="330" r="1"/><circle cx="200" cy="320" r="1.5"/><circle cx="480" cy="40" r="1"/>
   </g>
 
-  <!-- 装饰圆环 -->
-  <circle cx="320" cy="140" r="104" fill="none" stroke="#ffffff" stroke-opacity="0.10" stroke-width="2"/>
+  <!-- 星云光晕 -->
+  <circle cx="320" cy="180" r="120" fill="#6ee7b7" fill-opacity="0.06"/>
+  <circle cx="320" cy="180" r="80" fill="#a7f3d0" fill-opacity="0.08"/>
+  <circle cx="320" cy="180" r="50" fill="#a7f3d0" fill-opacity="0.14"/>
 
-  <!-- 单例图标：中心唯一实例方块，三处访问点用虚线连接 -->
-  <g>
-    <rect x="285" y="105" width="70" height="70" rx="14" fill="#6ee7b7" stroke="#a7f3d0" stroke-width="2"/>
-    <text x="320" y="155" font-size="38" font-weight="bold" fill="#064e3b" text-anchor="middle" font-family="system-ui, sans-serif">1</text>
-
-    <rect x="130" y="85" width="26" height="26" rx="6" fill="none" stroke="#a7f3d0" stroke-width="2" stroke-opacity="0.6"/>
-    <rect x="414" y="72" width="26" height="26" rx="6" fill="none" stroke="#a7f3d0" stroke-width="2" stroke-opacity="0.6"/>
-    <rect x="430" y="180" width="26" height="26" rx="6" fill="none" stroke="#a7f3d0" stroke-width="2" stroke-opacity="0.6"/>
-
-    <line x1="156" y1="110" x2="285" y2="130" stroke="#a7f3d0" stroke-width="2" stroke-dasharray="5 5" stroke-opacity="0.5"/>
-    <line x1="427" y1="98" x2="355" y2="120" stroke="#a7f3d0" stroke-width="2" stroke-dasharray="5 5" stroke-opacity="0.5"/>
-    <line x1="443" y1="180" x2="355" y2="162" stroke="#a7f3d0" stroke-width="2" stroke-dasharray="5 5" stroke-opacity="0.5"/>
+  <!-- 螺旋粒子 -->
+  <g fill="#a7f3d0">
+    <circle cx="320" cy="120" r="2.5"/><circle cx="368" cy="128" r="2"/><circle cx="398" cy="156" r="2.5"/>
+    <circle cx="398" cy="200" r="2"/><circle cx="368" cy="230" r="2.5"/><circle cx="320" cy="240" r="2"/>
+    <circle cx="270" cy="230" r="2.5"/><circle cx="242" cy="200" r="2"/><circle cx="242" cy="156" r="2.5"/>
+    <circle cx="270" cy="128" r="2"/>
   </g>
 
-  <!-- 标题 -->
-  <text x="320" y="268" font-size="44" font-weight="bold" fill="#ffffff" text-anchor="middle" font-family="system-ui, -apple-system, 'Microsoft YaHei', sans-serif">设计模式</text>
-  <text x="320" y="306" font-size="17" fill="#a7f3d0" text-anchor="middle" font-family="system-ui, sans-serif" letter-spacing="3">单例模式 · Singleton</text>
+  <!-- 中心亮核 -->
+  <circle cx="320" cy="180" r="20" fill="#d1fae5" fill-opacity="0.5"/>
+  <circle cx="320" cy="180" r="10" fill="#ffffff"/>
+  <circle cx="320" cy="180" r="5" fill="#ffffff"/>
+
+  <!-- 十字光芒 -->
+  <g stroke="#d1fae5" stroke-opacity="0.35" stroke-width="1.5">
+    <line x1="320" y1="140" x2="320" y2="155"/>
+    <line x1="320" y1="205" x2="320" y2="220"/>
+    <line x1="280" y1="180" x2="295" y2="180"/>
+    <line x1="345" y1="180" x2="360" y2="180"/>
+  </g>
 </svg>
