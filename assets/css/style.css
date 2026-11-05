@@ -484,10 +484,10 @@ ul {
   padding: 20px 22px;
 }
 
-/* 软件开发分栏：仅背景改为淡蓝渐变（gov.cn 专题卡片底色），
+/* 软件开发分栏：仅背景改为 gov.cn 专题卡片底色（淡蓝 #f3faff），
    标题、文字、圆点、日期、内边距等一律不动 */
 .section-block.dev-block {
-  background: linear-gradient(180deg, #f4f9fd 0%, #e4f0fa 100%);
+  background: #f3faff;
 }
 
 /* 作品展示：第二行占 2 栏 */
