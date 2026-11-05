@@ -182,7 +182,7 @@ ul {
 /* 页脚链接行：16px，左对齐，下方一条内容区宽度的分割线 */
 .footer-links {
   font-size: 16px;
-  color: #646464;
+  color: #333333;
   text-align: left;
   padding-bottom: 14px;
   margin-bottom: 14px;
@@ -190,7 +190,7 @@ ul {
 }
 
 .footer-links a {
-  color: #646464;
+  color: #333333;
 }
 
 .footer-links a:hover {
@@ -212,7 +212,7 @@ ul {
 
 .footer-copy {
   font-size: 13px;
-  color: #999999;
+  color: #333333;
 }
 
 .footer-qr {
@@ -232,7 +232,7 @@ ul {
 
 .footer-qr span {
   font-size: 12px;
-  color: #999999;
+  color: #333333;
 }
 
 /* ---------- 首页：焦点区（头条大标题 42px #015293） ---------- */
