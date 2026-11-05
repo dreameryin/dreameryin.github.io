@@ -190,13 +190,19 @@ ul {
   color: #015293;
 }
 
-/* 头条副标题：文章摘要，颜色与大标题一致（front matter 的 summary，缺省取正文第一段） */
+/* 头条副标题：文章摘要，颜色与大标题一致（front matter 的 summary，缺省取正文第一段）。
+   行数截断：最多 2 行，超出才在末尾加省略号；宽度自适应，不按字数硬切 */
 .featured-meta {
   text-align: center;
   font-size: 19px;
   color: #015293;
   line-height: 1.7;
   margin-top: 6px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
 }
 
 /* 焦点区主体：grid 两列（54:46，对标 gov.cn 660+510）。图下标题独占第二行，
