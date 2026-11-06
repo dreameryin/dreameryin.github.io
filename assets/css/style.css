@@ -1034,7 +1034,7 @@ ul {
   }
 
   .works-row {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     flex: none;
     min-height: auto;
     max-height: none;
