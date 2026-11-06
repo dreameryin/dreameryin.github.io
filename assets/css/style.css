@@ -407,6 +407,7 @@ ul {
   margin-bottom: 14px;
 }
 
+.block-head h2,
 .block-head h3 {
   font-family: "SimSun", "宋体", "Noto Serif SC", serif;
   font-size: 26px;
@@ -887,13 +888,6 @@ ul {
 }
 
 /* ---------- 分类主页（封面卡片 + 最新文章 + 专题栏目） ---------- */
-.block-head h2 {
-  font-family: "SimSun", "宋体", "Noto Serif SC", serif;
-  font-size: 26px;
-  font-weight: bold;
-  color: #000000;
-}
-
 /* 分类主页「专题栏目」标题与上方最新文章列表之间留白 */
 .category-home .post-list + .block-head,
 .category-home .empty-tip + .block-head {
@@ -1186,6 +1180,7 @@ ul {
     overflow-y: visible;
   }
 
+  .block-head h2,
   .block-head h3 {
     font-size: 22px;
   }
