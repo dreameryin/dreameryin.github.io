@@ -254,7 +254,7 @@ ul {
 /* 头条副标题：文章摘要，颜色与大标题一致（front matter 的 summary，缺省取正文第一段）。
    不限制行数，完整显示全部内容，下方焦点区随高度自适应 */
 .featured-meta {
-  text-align: center;
+  text-align: left;
   font-size: 20px;
   color: #015293;
   line-height: 1.7;
