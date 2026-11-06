@@ -252,29 +252,18 @@ ul {
 }
 
 /* 头条副标题：文章摘要，颜色与大标题一致（front matter 的 summary，缺省取正文第一段）。
-   行数截断：最多 2 行，超出才在末尾加省略号；宽度自适应，不按字数硬切 */
+   不限制行数，完整显示全部内容，下方焦点区随高度自适应 */
 .featured-meta {
   text-align: center;
   font-size: 20px;
   color: #015293;
   line-height: 1.7;
   margin-top: 6px;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  overflow: hidden;
 }
 
-/* 副标题整体也是链接（跳转到同一篇文章）：颜色继承副标题，
-   截断规则一并复制到 a 上，避免外层 -webkit-box 把 a 块化后丢失两行截断 */
+/* 副标题整体也是链接（跳转到同一篇文章）：颜色继承副标题 */
 .featured-meta a {
   color: inherit;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  overflow: hidden;
 }
 
 .featured-meta a:hover {
