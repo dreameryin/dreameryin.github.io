@@ -894,9 +894,15 @@ ul {
   color: #000000;
 }
 
+/* 分类主页「专题栏目」标题与上方最新文章列表之间留白 */
+.category-home .post-list + .block-head,
+.category-home .empty-tip + .block-head {
+  margin-top: 36px;
+}
+
 .cover-card {
   position: relative;
-  height: 300px;
+  height: 200px;
   border-radius: 8px;
   overflow: hidden;
   margin-top: 24px;
