@@ -938,7 +938,8 @@ ul {
   }
 
   .site-domain {
-    display: none;
+    display: block;
+    font-size: 12px;
   }
 
   .site-nav {
@@ -986,7 +987,8 @@ ul {
   }
 
   .featured-title {
-    font-size: 24px;
+    font-size: 20px;
+    font-weight: bold;
   }
 
   /* 头条副标题：字号与「最新文章」列表标题一致 */
