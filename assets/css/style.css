@@ -983,6 +983,9 @@ ul {
   /* 头条副标题：字号与「最新文章」列表标题一致 */
   .featured-meta {
     font-size: 16px;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 14px;
+    margin-bottom: 14px;
   }
 
   .featured-body {
