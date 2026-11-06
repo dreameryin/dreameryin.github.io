@@ -1,0 +1,79 @@
+---
+layout: default
+---
+
+{% comment %} 分类主页：封面卡片 → 最新文章 → 专题栏目（四个分类通用模板）。
+  分类名 = page.title，分类 slug = page.slug，简介 = page.intro。{% endcomment %}
+{% assign categoryName = page.title %}
+{% assign categorySlug = page.slug %}
+{% assign latestPosts = site.categories[categoryName] %}
+{% assign topics = site.topics | where: 'category', categoryName | sort: 'order' %}
+
+<div class="container category-home">
+
+  <!-- ① 封面卡片 -->
+  <div class="cover-card cover-{{ categorySlug }}">
+    <div class="cover-deco"></div>
+    <div class="cover-deco2"></div>
+    <div class="cover-tint"></div>
+    <div class="cover-txt">
+      <h1>{{ categoryName }}</h1>
+      {% if page.intro %}<p>{{ page.intro }}</p>{% endif %}
+    </div>
+  </div>
+
+  <!-- ② 最新文章 -->
+  <div class="block-head">
+    <h2>最新文章</h2>
+    <a class="more-link" href="/categories/{{ categorySlug }}/list.html">更多 &gt;&gt;</a>
+  </div>
+  {% if latestPosts and latestPosts.size > 0 %}
+  <ul class="post-list">
+    {% for post in latestPosts limit:6 %}
+    <li>
+      <a class="post-list-title" href="{{ post.url }}">{{ post.title }}</a>
+      <span class="post-list-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty-tip">该栏目暂无文章，敬请期待。</p>
+  {% endif %}
+
+  <!-- ③ 专题栏目 -->
+  <div class="block-head">
+    <h2>专题栏目</h2>
+  </div>
+  {% if topics and topics.size > 0 %}
+  <div class="topic-grid">
+    {% for topic in topics %}
+    {% assign topicPosts = site.posts | where: 'topic', topic.slug %}
+    <a class="topic-card" href="{{ topic.url }}">
+      {% if topic.cover and topic.cover != '' %}
+      <div class="topic-cover"><img src="{{ topic.cover }}" alt="{{ topic.title }}"></div>
+      {% else %}
+      {% assign gi = forloop.index | modulo: 6 | plus: 1 %}
+      <div class="topic-cover g{{ gi }}">
+        {% case gi %}
+        {% when 1 %}<svg viewBox="0 0 48 48" fill="none"><rect x="8" y="12" width="32" height="24" rx="4" stroke="#fff" stroke-width="2.5"/><path d="M16 20h16M16 26h10" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+        {% when 2 %}<svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="16" stroke="#fff" stroke-width="2.5"/><path d="M24 16v16M20 28h8" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+        {% when 3 %}<svg viewBox="0 0 48 48" fill="none"><path d="M8 34 L24 10 L40 34 Z" stroke="#fff" stroke-width="2.5"/><path d="M18 34h12" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+        {% when 4 %}<svg viewBox="0 0 48 48" fill="none"><path d="M8 14 h32 M8 24 h32 M8 34 h20" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+        {% when 5 %}<svg viewBox="0 0 48 48" fill="none"><rect x="8" y="10" width="32" height="28" rx="4" stroke="#fff" stroke-width="2.5"/><path d="M8 20h32M14 14h4M14 34h4" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+        {% when 6 %}<svg viewBox="0 0 48 48" fill="none"><path d="M16 14 l-8 10 8 10 M32 14 l8 10 -8 10 M28 10 l-8 28" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        {% endcase %}
+      </div>
+      {% endif %}
+      <div class="topic-body">
+        <div class="topic-name">{{ topic.title }}</div>
+        <div class="topic-desc">{{ topic.description }}</div>
+        <div class="topic-count">{{ topicPosts | size }} 篇</div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="empty-tip">暂无专题。</p>
+  {% endif %}
+
+</div>

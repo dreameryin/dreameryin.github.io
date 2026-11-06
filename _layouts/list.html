@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+{% comment %} 通用文章列表模板：专题页（collection）按 topic 过滤，分类列表页按 category 过滤。
+  两类页面共用同一套列表样式（深蓝标签 + 标题/日期），按发布时间倒序。{% endcomment %}
+<div class="container">
+  {% if page.collection == 'topics' %}
+    {% assign listTitle = page.title %}
+    {% assign posts = site.posts | where: 'topic', page.slug %}
+  {% else %}
+    {% assign listTitle = page.title %}
+    {% assign posts = site.categories[page.category_name] %}
+  {% endif %}
+
+  <div class="section-bar">
+    <span class="section-label">{{ listTitle }}</span>
+    <span class="section-sort">按发布时间排序</span>
+  </div>
+
+  {% if posts and posts.size > 0 %}
+  <ul class="post-list">
+    {% for post in posts %}
+    <li>
+      <a class="post-list-title" href="{{ post.url }}">{{ post.title }}</a>
+      <span class="post-list-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty-tip">暂无文章，敬请期待。</p>
+  {% endif %}
+</div>

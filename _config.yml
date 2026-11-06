@@ -22,6 +22,16 @@ markdown: kramdown
 highlighter: rouge
 
 # ============================================================
+# 专题集合（collection）
+#   每个专题一个文件放在 _topics/ 下，文件名即全局唯一 slug（分类前缀，避免重名）
+#   专题 front matter 字段：title(中文名)/category(归属分类)/cover(封面图)/description(简介)/order(排序)
+#   自动生成专题页 URL：/topics/<文件名>.html
+# ============================================================
+collections:
+  topics:
+    output: true
+
+# ============================================================
 # 栏目配置（页头导航 + 首页栏目块都由这里驱动）
 # 新增分类只需四步：
 #   1. 在下面加一项（slug 用英文，name 用中文显示名）
@@ -72,6 +82,11 @@ defaults:
       path: "_posts/关于我"
     values:
       categories: ["关于我"]
+  - scope:
+      path: ""
+      type: topics
+    values:
+      layout: list
 
 # 不参与构建的文件
 exclude:

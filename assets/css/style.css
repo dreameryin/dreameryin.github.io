@@ -886,6 +886,144 @@ ul {
   color: #d43c3c;
 }
 
+/* ---------- 分类主页（封面卡片 + 最新文章 + 专题栏目） ---------- */
+.block-head h2 {
+  font-family: "SimSun", "宋体", "Noto Serif SC", serif;
+  font-size: 26px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.cover-card {
+  position: relative;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 24px;
+}
+
+.cover-tint {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(2, 6, 23, 0.55) 100%);
+}
+
+.cover-txt {
+  position: absolute;
+  left: 36px;
+  bottom: 30px;
+  color: #ffffff;
+  z-index: 1;
+}
+
+.cover-txt h1 {
+  font-family: "SimSun", "宋体", serif;
+  font-size: 38px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.cover-txt p {
+  margin-top: 8px;
+  font-size: 15px;
+  color: #dff4fb;
+}
+
+.cover-deco,
+.cover-deco2 {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.cover-deco {
+  right: 60px;
+  top: 26px;
+  width: 170px;
+  height: 170px;
+}
+
+.cover-deco2 {
+  right: 130px;
+  top: 80px;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.cover-ai { background: linear-gradient(120deg, #312e81 0%, #6d28d9 55%, #a78bfa 100%); }
+.cover-ue { background: linear-gradient(120deg, #0c4a6e 0%, #0891b2 55%, #22d3ee 100%); }
+.cover-unity { background: linear-gradient(120deg, #0f172a 0%, #1e3a5f 55%, #3b82f6 100%); }
+.cover-architecture { background: linear-gradient(120deg, #022c22 0%, #065f46 55%, #34d399 100%); }
+
+/* 专题卡片 */
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.topic-card {
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #ffffff;
+  transition: box-shadow .2s;
+}
+
+.topic-card:hover {
+  box-shadow: 0 4px 16px rgba(1, 82, 147, .15);
+}
+
+.topic-cover {
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topic-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.topic-cover svg {
+  width: 52px;
+  height: 52px;
+}
+
+.topic-body {
+  padding: 14px 16px 16px;
+}
+
+.topic-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.topic-desc {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #888888;
+  line-height: 1.6;
+}
+
+.topic-count {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #999999;
+}
+
+.g1 { background: linear-gradient(135deg, #4c1d95, #7c3aed); }
+.g2 { background: linear-gradient(135deg, #1e3a5f, #3b82f6); }
+.g3 { background: linear-gradient(135deg, #0c4a6e, #22d3ee); }
+.g4 { background: linear-gradient(135deg, #065f46, #34d399); }
+.g5 { background: linear-gradient(135deg, #7c2d12, #f97316); }
+.g6 { background: linear-gradient(135deg, #0f172a, #475569); }
+
 /* ---------- 响应式：窄屏适配（手机竖屏一屏完整显示，无横向滚动） ---------- */
 @media (max-width: 768px) {
   /* 窄屏补回内容两侧内边距 */
@@ -1108,5 +1246,52 @@ ul {
   .post-content table {
     display: block;
     overflow-x: auto;
+  }
+
+  /* 分类主页：封面降高，专题卡片 2 列 */
+  .cover-card {
+    height: 160px;
+    margin-top: 16px;
+    border-radius: 6px;
+  }
+
+  .cover-txt {
+    left: 20px;
+    bottom: 16px;
+  }
+
+  .cover-txt h1 {
+    font-size: 26px;
+  }
+
+  .cover-txt p {
+    font-size: 13px;
+  }
+
+  .cover-deco {
+    right: 20px;
+    top: 10px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .cover-deco2 {
+    right: 70px;
+    top: 50px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .topic-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .topic-cover {
+    height: 100px;
+  }
+
+  .topic-name {
+    font-size: 16px;
   }
 }
